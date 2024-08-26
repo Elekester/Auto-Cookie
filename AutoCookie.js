@@ -15,7 +15,7 @@ var AC = {
 	'Sim': {},	// Simulations
 	'Version': {	// Version Information
 		'CC': '2.052',
-		'AC': '0.252',
+		'AC': '0.253',
 	}
 }
 
@@ -433,14 +433,14 @@ new AC.Auto('Godzamok Loop', 'Triggers Godzamok\'s Devastation buff by selling a
 	}
 }, {
 	'name': 'Interval',
-	'desc': 'How often to sell and buy back buildings. Setting this to less than 10,000 ms doesn\'t work that well.',
+	'desc': 'How often to sell and buy back buildings.',
 	'type': 'slider',
 	'timeCreated': 202101172109,
 	'value': 0,
 	'units': 'ms',
 	'min': 0,
-	'max': 15000,
-	'step': 150
+	'max': 10020,
+	'step': 10
 }, {
 	'name': 'Sell Extra Cursors',
 	'desc': 'How many extra cursors to buy and sell back, in groups of 100. This will lag the game.',
