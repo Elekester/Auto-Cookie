@@ -15,7 +15,7 @@ var AC = {
 	'Sim': {},	// Simulations
 	'Version': {	// Version Information
 		'CC': '2.052',
-		'AC': '0.253',
+		'AC': '0.254',
 	}
 }
 
@@ -429,6 +429,10 @@ new AC.Auto('Godzamok Loop', 'Triggers Godzamok\'s Devastation buff by selling a
 	if (this.cache.condition && Game.buyMode != -1) {
 		var numObjects = Game.ObjectsById[0].amount;
 		Game.ObjectsById[0].sell(numObjects);
+		for (i = 0; i < this['Sell Extra Cursors']; i++) {
+			Game.ObjectsByID[0].buy(100);
+			Game.ObjectsByID[0].sell(100);
+		}
 		Game.ObjectsById[0].buy(numObjects);
 	}
 }, {
@@ -439,17 +443,17 @@ new AC.Auto('Godzamok Loop', 'Triggers Godzamok\'s Devastation buff by selling a
 	'value': 0,
 	'units': 'ms',
 	'min': 0,
-	'max': 10020,
-	'step': 10
+	'max': 10050,
+	'step': 10050
 }, {
 	'name': 'Sell Extra Cursors',
 	'desc': 'How many extra cursors to buy and sell back, in groups of 100. This will lag the game.',
-	'type': 'deprecated',
+	'type': 'slider',
 	'timeCreated': 202101172110,
 	'value': 0,
 	'units': '× 100',
 	'min': 0,
-	'max': 1000,
+	'max': 100,
 	'step': 1
 }, {
 	'name': 'Sell up to',
