@@ -15,7 +15,7 @@ var AC = {
 	'Sim': {},	// Simulations
 	'Version': {	// Version Information
 		'CC': '2.052',
-		'AC': '0.251',
+		'AC': '0.252',
 	}
 }
 
@@ -426,7 +426,7 @@ new AC.Auto('Godzamok Loop', 'Triggers Godzamok\'s Devastation buff by selling a
 		AC.Data.mouseUpgrades.forEach((function(upgrade) {if (Game.Has(upgrade)) {this.cache.condition++}}).bind(this));
 		try {this.cache.condition *= Game.hasGod('ruin')} catch {this.cache.condition = 0}
 	}
-	if (this.cache.condition && Game.buyMode != -1 && !Game.hasBuff('Devastation')) {
+	if (this.cache.condition && Game.buyMode != -1) {
 		var numObjects = Game.ObjectsById[0].amount;
 		Game.ObjectsById[0].sell(numObjects);
 		Game.ObjectsById[0].buy(numObjects);
