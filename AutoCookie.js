@@ -14,7 +14,7 @@ var AC = {
 	'Settings': {},	// Settings
 	'Version': {	// Version Information
 		'CC': '2.052',
-		'AC': '0.255',
+		'AC': '0.256',
 	}
 }
 
