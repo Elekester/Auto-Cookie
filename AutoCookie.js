@@ -12,7 +12,6 @@ var AC = {
 	'Display': {},	// Display Functions
 	'Game': {},	// Copies of game functions and data
 	'Settings': {},	// Settings
-	'Sim': {},	// Simulations
 	'Version': {	// Version Information
 		'CC': '2.052',
 		'AC': '0.255',
@@ -469,13 +468,13 @@ AC.AutosById.sort(function(a, b) {return a.timeCreated - b.timeCreated});
 /*******************************************************************************
  * Data
  ******************************************************************************/
-AC.Data.mouseUpgrades = ['Plastic mouse', 'Iron mouse', 'Titanium mouse', 'Adamantium mouse', 'Unobtainium mouse', 'Eludium mouse', 'Wishalloy mouse', 'Fantasteel mouse', 'Nevercrack mouse', 'Armythril mouse', 'Technobsidian mouse', 'Plasmarble mouse', 'Miraculite mouse', 'Fortune #104'];
+AC.Data.mouseUpgrades = ['Plastic mouse', 'Iron mouse', 'Titanium mouse', 'Adamantium mouse', 'Unobtainium mouse', 'Eludium mouse', 'Wishalloy mouse', 'Fantasteel mouse', 'Nevercrack mouse', 'Armythril mouse', 'Technobsidian mouse', 'Plasmarble mouse', 'Miraculite mouse', 'Aetherice mouse', 'Omniplast mouse', Fortune #104'];
 
 // Doesn't include 'Sugar frenzy' (due to the minor benefit).
-AC.Data.cpsBuffs = ["High-five", "Congregation", "Luxuriant harvest", "Ore vein", "Oiled-up", "Juicy profits", "Fervent adoration", "Manabloom", "Delicious lifeforms", "Breakthrough", "Righteous cataclysm", "Golden ages", "Extra cycles", "Solar flare", "Winning streak", "Macrocosm", "Refactoring", "Cosmic nursery", "Frenzy", "Elder Frenzy", "Dragon Harvest"];
+// AC.Data.cpsBuffs = ["High-five", "Congregation", "Luxuriant harvest", "Ore vein", "Oiled-up", "Juicy profits", "Fervent adoration", "Manabloom", "Delicious lifeforms", "Breakthrough", "Righteous cataclysm", "Golden ages", "Extra cycles", "Solar flare", "Winning streak", "Macrocosm", "Refactoring", "Cosmic nursery", "Frenzy", "Elder Frenzy", "Dragon Harvest"];
 
 // Doesn't include 'Cursed finger' (since it is also a CPS debuff) or 'Devastation' (since its trigger is entirely player controlled).
-AC.Data.clickBuffs = ["Click frenzy", "Dragonflight"];
+// AC.Data.clickBuffs = ["Click frenzy", "Dragonflight"];
 
 /*******************************************************************************
  * Display
@@ -681,61 +680,6 @@ AC.Settings = {
 	'C': '',	// Auto Cookie's favorite cookie.
 	'S': 1,	// Whether or not Auto Cookie's settings have been collapsed (0 means collapsed).
 }
-
-/*******************************************************************************
- * Simulations
- ******************************************************************************/
-// /**
- // * The game state currently doesn't account for: any minigame, sugar lumps, active buffs.
- // * @typedef GameState
- // * @property {number} timeWaited - The amount of time spent waiting.
- // * @property {Array} movesMade - A list of moves made.
- // * @property {number} cps - The expected cps of this game state.
- // */
-
-// /**
- // * This function simulates a game state out to a limit based on search depth and a maximum amount of wait time and returns the final game state of the best moves.
- // * @param {GameState} gameState - The game state to be evaluated.
- // * @param {number} depth - The maximum search depth.
- // * @global {number} AC.Sim.maxTimeWaited - The maximum amount of time to wait.
- // * @returns {GameState} - The game state after it's been simulated.
- // */
-// AC.Sim.simulate = function(gameState, depth) {
-	// depth ??= 0;
-	
-	// if (gameState.timeWaited > AC.Sim.maxTimeWaited || depth == 0) return gameState;
-	// else {
-		// var bestChild = {'cps':0};
-		// var child = undefined;
-		// var legalMoves = AC.Sim.legalMoves(gameState);
-		// for (move in legalMoves) {
-			// child = AC.Sim.simulate(AC.Sim.updateGameState(gameState, legalMoves[move]), depth-1);
-			// bestChild = (child.cps < bestChild.cps) ? bestChild : child
-		// }
-		// return bestChild;
-	// }
-// }
-
-// /**
- // * This function returns an array of legal moves from a game state.
- // * @param {GameState} gameState - The game state.
- // * @returns {Array} - An array of legal moves.
- // */
-// AC.Sim.legalMoves = function(gameState) {
-	// // Do something.
-// }
-
-// /**
- // * This function returns the game state that would occur if the move was made.
- // * @param {GameState} gameState - The initial game state.
- // * @param {Move} move - The move to apply.
- // * @returns {GameState} - The game state after applying the move.
- // */
-// AC.Sim.updateGameState = function(gameState, move) {
-	// // Do something.
-// }
- 
-// AC.Sim.maxTimeWaited = 1000; // 1 second.
 
 /*******************************************************************************
  * Register the mod with Cookie Clicker
